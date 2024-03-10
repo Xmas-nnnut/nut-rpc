@@ -24,6 +24,12 @@
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>io.netty</groupId>
+            <artifactId>netty-resolver-dns-native-macos</artifactId>
+            <version>4.1.75.Final</version> <!--版本号自己切-->
+            <classifier>osx-aarch_64</classifier>
+        </dependency>
         <!-- https://doc.hutool.cn/ -->
         <dependency>
             <groupId>cn.hutool</groupId>
@@ -38,8 +44,8 @@
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-            <version>1.7.21</version>
+            <artifactId>slf4j-simple</artifactId>
+            <version>1.7.30</version>
         </dependency>
     </dependencies>
 </project>
