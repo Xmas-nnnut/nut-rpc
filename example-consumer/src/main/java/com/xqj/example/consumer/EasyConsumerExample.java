@@ -2,6 +2,7 @@ package com.xqj.example.consumer;
 
 import com.xqj.example.common.model.User;
 import com.xqj.example.common.service.UserService;
+import com.xqj.nutrpc.core.proxy.ServiceProxyFactory;
 import lombok.extern.slf4j.Slf4j;
 
 /**
@@ -14,8 +15,14 @@ import lombok.extern.slf4j.Slf4j;
 public class EasyConsumerExample {
 
     public static void main(String[] args) {
-        // todo: 需要获取 UserService 的实现对象
-        UserService userService = null;
+//        UserService userService = null;
+
+        // 静态代理
+//        UserService userService = new UserServiceProxy();
+
+        // 动态代理
+        UserService userService = ServiceProxyFactory.getProxy(UserService.class);
+
         User user = new User();
         user.setName("我是坚果");
         // 调用
